@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.clear:after {content: ''; height: 0; visibility: hidden; display: block;clear: both;}
+		.clear { zonm:1; }
+		#ul1 {clear: both; float: none;}
+		#ul1 li{ list-style: none; line-height: 30px; margin-right: 20px; float: left;}
+		p { margin-top: -40px; color: red; font-size: 30px; font-weight: bolder;}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var oUl = document.getElementById('ul1');
+			var link = oUl.getElementsByTagName('a');
+			var oPic = document.getElementById('pic');
+			var txt = document.getElementsByTagName('p')[0];
+			for (var i = 0; i < link.length; i++) {
+				link[i].index = i;
+				link[i].onclick = function()
+				{
+					oPic.src = this.href;
+					txt.innerHTML = this.title;
+					return false;
+				};
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1" class="clear">
+	
+		<li><a href="img/b1.jpg" title="aaaaa">pic1</a></li>
+		<li><a href="img/b2.jpg" title="bbbbb">pic2</a></li>
+		<li><a href="img/b3.jpg" title="ccccc">pic3</a></li>
+		<li><a href="img/b4.jpg" title="ddddd">pic4</a></li>
+		<li><a href="img/b5.jpg" title="eeeee">pic5</a></li>
+		<li><a href="img/b6.jpg" title="fffff">pic6</a></li>
+	
+	</ul>
+	<img src="img/0.png" id="pic">
+	<p></p>
+</body>
+</html>
